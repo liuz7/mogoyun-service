@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+#build
+.gradle
+buildpacks
+examples
+gradle
+logs
+out
+minikube

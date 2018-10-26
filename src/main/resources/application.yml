@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mogoyun-service
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: true
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mogoyun?characterEncoding=utf-8&useSSL=false
+    username: root
+    password:
+  jpa:
+    hibernate.ddl-auto: create
+    generate-ddl: true
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  security:
+    oauth2:
+      client:
+        registration:
+          mogo:
+            client-id: iWrzDPx5cx09q6eAXWCkESF4ZEBNBh3XRXSEnHiy
+            client-secret: TksQIeW74zYxpS0N3TegWtzwmUDGUNggjwQCosjJiysWxtCRO7
+            client-name: mogo_login
+            scope: email
+            authorization-grant-type: authorization_code
+            redirect-uri-template: http://192.168.49.71:8080/login/oauth2/code/mogo_login
+            client-authentication-method: post
+        provider:
+          mogo:
+            authorization-uri: http://home.mogo.com/oauth/authorize
+            token-uri: http://home.mogo.com/oauth/token
+            user-info-uri: http://home.mogo.com/oauth/api/info
+            user-name-attribute: id

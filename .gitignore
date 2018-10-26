@@ -1,0 +1,11 @@
+*.class
+*.log
+*.iml
+.gradle
+.idea
+out
+examples/gradle/build
+build
+hs_err_pid*
+buildpacks/gradle/tmp/
+
